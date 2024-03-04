@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pydantic_settings-{{ version }}.tar.gz
-  sha256: 00b9f6a5e95553590434c0fa01ead0b216c3e10bc54ae02e37f359948643c5ed
+  sha256: 26b1492e0a24755626ac5e6d715e9077ab7ad4fb5f19a8b7ed7011d52f36141c
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
