@@ -1,5 +1,5 @@
 {% set name = "pydantic-settings" %}
-{% set version = "2.1.0" %}
+{% set version = "2.6.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pydantic_settings-{{ version }}.tar.gz
-  sha256: 26b1492e0a24755626ac5e6d715e9077ab7ad4fb5f19a8b7ed7011d52f36141c
+  sha256: e0f92546d8a9923cb8941689abf85d6601a8c19a23e97a34b2964a2e3f813ca0
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -20,8 +20,13 @@ requirements:
     - pip
   run:
     - python
-    - pydantic >=2.3.0
+    - pydantic >=2.7.0
     - python-dotenv >=0.21.0
+  run_constrained:
+    - azure-identity >=1.16.0
+    - azure-keyvault-secrets >=4.8.0
+    - tomli >=2.0.1
+    - pyyaml >=6.0.1
 
 test:
   imports:
